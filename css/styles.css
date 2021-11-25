@@ -71,6 +71,13 @@ ul {
   padding-top: 94px;
   padding-bottom: 94px;
 }
+.link-animation {
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-animation {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 /* -------- */
 /* Header */
@@ -133,9 +140,11 @@ nav {
   content: '';
   display: block;
   width: 100%;
-  border-bottom: 4px solid var(--link-hover-color);
+  height: 4px;
+  background-color: var(--link-hover-color);
   position: absolute;
   bottom: 0;
+  border-radius: 2px;
 }
 .link:hover,
 .link:focus,
@@ -284,8 +293,7 @@ nav {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--text-fifth-color);
-  background-image: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8)),
-    url(../images/descktop-app.jpg);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 /* Наша команда */
@@ -380,13 +388,14 @@ nav {
   border: 1px solid var(--accent-link-color);
   border-radius: 4px;
 }
+.clients-icon {
+  fill: currentColor;
+}
 .clients-link:hover,
 .clients-link:focus {
   border-color: var(--link-hover-color);
 }
-.clients-icon {
-  fill: currentColor;
-}
+
 .clients-link:hover .clients-icon,
 .clients-link:focus .clients-icon {
   color: var(--link-hover-color);
