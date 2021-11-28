@@ -71,11 +71,6 @@ ul {
   padding-top: 94px;
   padding-bottom: 94px;
 }
-.link-animation {
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 /* -------- */
 
@@ -103,6 +98,7 @@ nav {
   border-bottom: 1px solid #ececec;
 }
 .logo {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 26px;
@@ -117,6 +113,7 @@ nav {
   color: var(--text-third-color);
 }
 .link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
   width: 100%;
   padding-top: 32px;
@@ -279,16 +276,17 @@ nav {
   margin-right: 30px;
 }
 .our-work-lebel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
   width: 100%;
   position: absolute;
   bottom: 0;
-  padding-top: 27px;
-  padding-bottom: 27px;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
-  text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--text-fifth-color);
@@ -322,6 +320,7 @@ nav {
   width: 44px;
 }
 .team-link {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -331,11 +330,12 @@ nav {
   color: var(--accent-link-color);
 }
 .team-icon {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: currentColor;
 }
 .team-link:hover .team-icon,
 .team-link:focus .team-icon {
-  color: #ffffff;
+  color: var(--text-fifth-color);
 }
 .team-link:hover,
 .team-link:focus {
@@ -378,6 +378,7 @@ nav {
   margin-left: 30px;
 }
 .clients-link {
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -388,6 +389,7 @@ nav {
   border-radius: 4px;
 }
 .clients-icon {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: currentColor;
 }
 .clients-link:hover,
@@ -414,6 +416,7 @@ nav {
   margin-top: 9px;
 }
 .footer-link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
   cursor: pointer;
   font-style: normal;
@@ -425,6 +428,7 @@ nav {
 }
 .logo-accent-studio {
   color: var(--text-fifth-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Join */
@@ -457,6 +461,7 @@ nav {
   margin-left: 10px;
 }
 .join-link {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -471,7 +476,7 @@ nav {
 }
 .join-link:hover .team-icon,
 .join-link:focus .team-icon {
-  color: #ffffff;
+  color: var(--text-fifth-color);
 }
 .join-link:hover,
 .join-link:focus {
@@ -490,6 +495,9 @@ nav {
   padding: 0;
 }
 .exemples-button {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
   padding: 6px 22px;
   border: 0;
@@ -538,6 +546,8 @@ nav {
   width: 100%;
   height: 100%;
   position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
   padding-top: 63px;
   padding-bottom: 63px;
   padding-left: 24px;
@@ -553,7 +563,7 @@ nav {
 }
 .galery-link:hover .galery-item-text,
 .galery-link:focus .galery-item-text {
-  transform: translateY(-100%);
+  transform: translateY(0);
 }
 .item-name {
   padding-top: 20px;
@@ -579,12 +589,14 @@ nav {
 
 /* -------Modal--------- */
 .backdrop {
-  width: 100vw;
-  height: 1024px;
-  position: absolute;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-  transition: opacity 2000ms, visibility 2000ms;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal {
   width: 528px;
@@ -597,12 +609,6 @@ nav {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transition: transform 2000ms;
-}
-.backdrop.is-hidden .modal {
-  transition: transform 2000ms;
-  transform: translateX(100%);
-  transform: scale(2);
 }
 .modal-close {
   padding: 0;
